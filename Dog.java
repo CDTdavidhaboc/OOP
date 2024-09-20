@@ -3,7 +3,7 @@ class Dog {
     boolean isMale;
     int numPuppies;
     Dog puppies[] = new Dog[4];
-    Dog animal;
+    Dog aso;
 
 public void setName(String dogName){
 name = dogName;
@@ -20,10 +20,13 @@ public void setNumber(int numOfPuppies){
 public int showNumber(){
     return numPuppies;
 }
-public void setPuppies(String[] puppiesSet){
+public void setPuppies(Dog puppiesSet[]){
     puppies = puppiesSet;
 }
-public String [] showPuppies(){
-    return puppiesSet;
+public void showPuppies(){
+   System.out.print(" ");
+   for(int i = 0; i <= puppies.length; i++){
+    System.out.print(puppies[i].name + ", ");
+   }
 }
 }

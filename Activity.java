@@ -7,22 +7,24 @@ class Activity {
         System.out.println(dog.showName());
         System.out.println(dog.bark());
         
+        dog.setNumber(4);
+        System.out.println(dog.showNumber());
+
         Dog dog1 = new Dog();
-        dog1.name = "SS";
+        dog1.name = "Maxx";
         Dog dog2 = new Dog();
-        dog2.name = "FF";
+        dog2.name = "Snow";
         Dog dog3 = new Dog();
-        dog3.name = "DD";
+        dog3.name = "Minx";
         Dog dog4 = new Dog();
-        dog4.name = "fd";
+        dog4.name = "Olivia";
 
-        dog.animal[] = {dog1, dog2, dog3, dog4};
-        dog.setPuppies(animal);
+        Dog aso[] = {dog1, dog2, dog3, dog4};
+        dog.setPuppies(aso);
 
-        System.out.println("");
+        System.out.println(" ");
         
-        for(int i = 0; i <= dog.showPuppies().length; i++){
-            System.out.print(dog.showPuppies()[i].name + "");  
+        dog.showPuppies(); 
         }
     }
-}
+
