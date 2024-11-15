@@ -1,30 +1,100 @@
-class Activity {
-    public static void main(String[] args){
+public class Activity {
+    public static void main(String[] args) {
+        Student student = new Student("Juan", "Batangas PH", "BSIT", 2);
+            System.out.println("Student Name: " + student.getName()); 
+            System.out.println("Student Addres: " + student.getAddress());
+            System.out.println("Student Program: " + student.getProgram());
+            System.out.println("Student Year: " + student.getYear());
+            System.out.println(student.toString()); 
 
-        Dog dog = new Dog();
-        dog.setName("Harry");
+            System.out.println();
 
-        System.out.println(dog.showName());
-        System.out.println(dog.bark());
-        
-        dog.setNumber(4);
-        System.out.println(dog.showNumber());
-
-        Dog dog1 = new Dog();
-        dog1.name = "Maxx";
-        Dog dog2 = new Dog();
-        dog2.name = "Snow";
-        Dog dog3 = new Dog();
-        dog3.name = "Minx";
-        Dog dog4 = new Dog();
-        dog4.name = "Olivia";
-
-        Dog aso[] = {dog1, dog2, dog3, dog4};
-        dog.setPuppies(aso);
-
-        System.out.println(" ");
-        
-        dog.showPuppies(); 
-        }
+        Staff staff = new Staff("PedroPenduko", "Balayan, Batangas", "BSU Balayan",  20000);
+            System.out.println("Staff Name: " + staff.getName()); 
+            System.out.println("Staff Addres: " + staff.getAddress());
+            System.out.println("Staff School: " + staff.getSchool());
+            System.out.println("Staff Salary: " + staff.getSalary() + "php");
+            System.out.println(staff.toString());
     }
+}
+
+class Person{
+    protected String Name;
+    protected String Address;
+
+    public void setName (String Name) {
+        this.Name = Name;
+
+}
+    public void setAddress (String Address) {
+        this.Address = Address; 
+}
+    public String getName() {
+        return Name;
+}
+    public String getAddress() {
+        return Address; 
+}
+@Override
+    public String toString(){
+        return "Hello I am" + Name + "and" + "I live in" + Address;
+}
+}
+
+class Student extends Person{
+    private String Program;
+    private int Year;
+
+    public Student (String Name, String Address, String Program, int Year) {
+        this.Name = Name;
+        this.Address = Address;
+        this.Program = Program;
+        this.Year = Year;
+}
+    public void setProgram (String Program) {
+        this.Program = Program;
+}
+    public void setYear(int Year)  {
+        this.Year = Year;
+}
+    public String getProgram() {
+        return Program;
+}
+    public int getYear() {
+        return Year;  
+}
+@Override
+    public String toString(){
+        return "Hello I am " + Name + " and " + " I live in " + Address + ". I am " + Year + " year of " +Program + ".";
+}
+
+}
+class Staff extends Person{
+    private String School;
+    private double Salary;
+
+    public Staff(String Name, String Address, String School, double Salary) {
+        this.Name = Name;
+        this.Address = Address;
+        this.School = School;
+        this.Salary = Salary;
+}
+    public void setSchool (String School) {
+        this.School = School;
+}
+    public void setSalary(double Salary)  {
+        this.Salary = Salary;
+}
+    public String getSchool() {
+        return School;
+    }
+    public double getSalary() {
+        return Salary;
+        
+    }
+    @Override
+    public String toString(){
+        return "Hello I am " + Name + " and " + "I live in " + Address + ". I worked at school " + School + " with the salary of  " + Salary + ".";
+}
+}
 
